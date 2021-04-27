@@ -76,6 +76,8 @@
 
     async function getUserProfile() {
       const porfile = await liff.getPorfile()
+      console.log('porfil :', porfile)
+      alert(porfile)
       document.getElementById('pictureUrl').src = profile.pictureUrl
       document.getElementById('userId').append(profule.userId)
       document.getElementById('statusMessagw').append(profile.statusMessage)
