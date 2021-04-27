@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <p>Test Version! <soan id="ver_">0.004 </soan>
+  <p>Test Version! <soan id="ver_">0.005 </soan>
   </p>
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
@@ -81,6 +81,7 @@
           const name = profile.displayName
           console.log('profile', profile);
           document.getElementById('ver_').append("waiting...")
+          document.getElementById('ver_').append(profile.toString())
         })
         .catch((err) => {
           console.log('error', err);
