@@ -9,7 +9,8 @@
 </head>
 
 <body>
-  <p>Test Version! 0.003</p>
+  <p>Test Version! <soan id="ver_">0.003</soan>
+  </p>
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
@@ -82,6 +83,7 @@
         })
         .catch((err) => {
           console.log('error', err);
+          document.getElementById('ver_').append(err)
         });
       // const porfile = await liff.getProfile()
       // alert("pictureUrl" + profile.pictureUrl)
