@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <p>Test Version! <soan id="ver_">0.006 </soan>
+  <p>Test Version! <soan id="ver_">0.007 </soan>
   </p>
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
@@ -76,26 +76,28 @@
     }
 
     async function getUserProfile() {
-      liff.getProfile()
-        .then(profile => {
-          const name = profile.displayName
-          console.log('profile', profile);
-          document.getElementById('ver_').append("waiting...")
-          document.getElementById('ver_').append(JSON.stringify(profile))
-        })
-        .catch((err) => {
-          console.log('error', err);
-          document.getElementById('ver_').append(err)
-        });
-      // const porfile = await liff.getProfile()
-      // alert("pictureUrl" + profile.pictureUrl)
-      // // alert("userId" + profile.pictureUrl)
-      // // alert("statusMessagw" + profile.pictureUrl)
-      // // alert("displayName" + profile.pictureUrl)
-      // document.getElementById('pictureUrl').src = profile.pictureUrl
-      // document.getElementById('userId').append(profule.userId)
-      // document.getElementById('statusMessagw').append(profile.statusMessage)
-      // document.getElementById('displayName').append(profile.displayName)
+      // liff.getProfile()
+      //   .then(profile => {
+      //     const name = profile.displayName
+      //     console.log('profile', profile);
+      //     document.getElementById('ver_').append("waiting...")
+      //     document.getElementById('ver_').append(JSON.stringify(profile))
+      //   })
+      //   .catch((err) => {
+
+      //   });
+
+      try {
+        const profile = await liff.getProfile()
+        document.getElementById('pictureUrl').src = profile.pictureUrl
+        document.getElementById('userId').append(profile.userId)
+        document.getElementById('statusMessagw').append(profile.statusMessage)
+        document.getElementById('displayName').append(profile.displayName)
+
+      } catch (error) {
+        console.log('error', error);
+        document.getElementById('ver_').append(error)
+      }
     }
 
     function getEnvironment() {
