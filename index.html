@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <p>Test Version! <soan id="ver_">0.008 </soan>
+  <p>Test Version! <soan id="ver_">0.009 </soan>
   </p>
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
@@ -92,7 +92,7 @@
         document.getElementById('pictureUrl').src = profile.pictureUrl
         document.getElementById('userId').append(profile.userId)
         document.getElementById('displayName').append(profile.displayName)
-        // document.getElementById('statusMessagw').append(profile.statusMessage)
+        document.getElementById('statusMessagw').append(profile.statusMessage)
 
       } catch (error) {
         console.log('error', error);
