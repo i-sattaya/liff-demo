@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <p>Test Version! <soan id="ver_">0.011 </soan>
+  <p>Test Version! <soan id="ver_">0.012 </soan>
   </p>
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
@@ -73,20 +73,14 @@
     }
 
     function getContext() {
+      document.getElementById("type").append(liff.getContext().type)
+      document.getElementById("viewType").append(liff.getContext().viewType)
+      document.getElementById("utouId").append(liff.getContext().utouId)
+      document.getElementById("roomId").append(liff.getContext().roomId)
+      document.getElementById("groupId").append(liff.getContext().groupId)
     }
 
     async function getUserProfile() {
-      // liff.getProfile()
-      //   .then(profile => {
-      //     const name = profile.displayName
-      //     console.log('profile', profile);
-      //     document.getElementById('ver_').append("waiting...")
-      //     document.getElementById('ver_').append(JSON.stringify(profile))
-      //   })
-      //   .catch((err) => {
-
-      //   });
-
       try {
         const profile = await liff.getProfile()
         document.getElementById('pictureUrl').src = profile.pictureUrl
@@ -121,7 +115,7 @@
       await liff.init({ liffId: "1655921500-Akpy5xxl" })
       getEnvironment()
       getUserProfile()
-      // getContext()
+      getContext()
       // getFriendship()
       // createUniversalLink()
     }
