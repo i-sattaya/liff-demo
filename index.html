@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <p>Test Version! <soan id="ver_">0.016 </soan>
+  <p>Test Version! <soan id="ver_">0.017 </soan>
   </p>
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
@@ -75,16 +75,36 @@
           document.getElementById('ver_').append(liff.getContext().type)
           await liff.sendMessages([
             {
+              "type": "text",
+              "text": "Hello, world"
+            },
+            {
+              "type": "text",
+              "text": "$ LINE emoji $",
+              "emojis": [
+                {
+                  "index": 0,
+                  "productId": "5ac1bfd5040ab15980c9b435",
+                  "emojiId": "001"
+                },
+                {
+                  "index": 13,
+                  "productId": "5ac1bfd5040ab15980c9b435",
+                  "emojiId": "002"
+                }
+              ]
+            },
+            {
               "type": "sticker",
-              "sticlerId": 1,
-              "packageId": 1
+              "packageId": "446",
+              "stickerId": "1988"
             }
           ])
           alert("Message sent")
         }
       } catch (error) {
         document.getElementById('ver_').append(error)
-        alert("Message Error!", error)
+        alert("Message Error!" + error)
       }
     }
 
