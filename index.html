@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <p>Test Version! <soan id="ver_">0.010 </soan>
+  <p>Test Version! <soan id="ver_">0.011 </soan>
   </p>
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
@@ -93,6 +93,7 @@
         document.getElementById('userId').append(profile.userId)
         document.getElementById('displayName').append(profile.displayName)
         document.getElementById('statusMessage').append(profile.statusMessage)
+        document.getElementById('decodedIDToken').append(liff.getDecodedIDToken().email)
 
       } catch (error) {
         console.log('error', error);
