@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <p>Test Version! <soan id="ver_">0.013 </soan>
+  <p>Test Version! <soan id="ver_">0.014 </soan>
   </p>
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
@@ -71,7 +71,7 @@
 
     async function sendMsg() {
       if (liff.getContext().type !== "non" || liff.getContext().type !== "external") {
-        await liff.seendMessages([
+        await liff.sendMessages([
           {
             "type": "sticker",
             "sticlerId": 1,
